@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora de Pasantía - FSmartIA</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="stepper-container">
+        <div class="stepper-header">
+            <div class="step-indicator active" data-step="1">
+                <span class="step-number">1</span>
+                <span class="step-label">Plan del Día</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-indicator" data-step="2">
+                <span class="step-number">2</span>
+                <span class="step-label">Cumplimiento</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-indicator" data-step="3">
+                <span class="step-number">3</span>
+                <span class="step-label">Dudas y Equipo</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step-indicator" data-step="4">
+                <span class="step-number">4</span>
+                <span class="step-label">Aprendizaje</span>
+            </div>
+        </div>
+
+        <form id="bitacoraForm" autocomplete="off">
+
+            <div class="form-step step-active" id="step-1">
+                <h2 class="step-title">¿Cuál es el plan para hoy?</h2>
+                <p class="step-subtitle">Define tus objetivos y las tareas asignadas por tu supervisor.</p>
+
+                <div class="input-group">
+                    <label for="input-objetivo">Objetivos propios del día</label>
+                    <div class="dynamic-input">
+                        <input type="text" id="input-objetivo"
+                            placeholder="Ej: Entender la estructura de la base de datos...">
+                        <button type="button" class="btn-add" id="btn-add-objetivo">+</button>
+                    </div>
+                    <ul class="tags-list" id="lista-objetivos"></ul>
+                </div>
+
+                <div class="input-group">
+                    <label for="input-tarea">Tareas asignadas por el superior</label>
+                    <div class="dynamic-input">
+                        <input type="text" id="input-tarea" placeholder="Ej: Crear el endpoint de login...">
+                        <button type="button" class="btn-add" id="btn-add-tarea">+</button>
+                    </div>
+                    <ul class="tags-list" id="lista-tareas"></ul>
+                </div>
+            </div>
+
+            <div class="form-step" id="step-2">
+                <h2 class="step-title">Evaluación del día</h2>
+                <p class="step-subtitle">Revisa lo que planeaste en la mañana y cuéntanos cómo te fue.</p>
+
+                <div id="cumplimiento-container">
+                </div>
+            </div>
+
+            <div class="form-step" id="step-3">
+                <h2 class="step-title">Dudas y Trabajo en Equipo</h2>
+                <p class="step-subtitle">El crecimiento también viene de resolver problemas y observar el entorno.</p>
+
+                <div class="input-group">
+                    <label for="dudas">¿Tuviste alguna duda hoy? ¿Qué hiciste para resolverla?</label>
+                    <textarea id="dudas"
+                        placeholder="Ej: Tenía dudas con un query de SQL. Revisé la documentación y luego le consulté a un compañero senior..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="equipo">¿Qué aprendiste hoy al ver trabajar a tus compañeros?</label>
+                    <textarea id="equipo"
+                        placeholder="Ej: Noté cómo organizan sus pull requests y la buena comunicación que tienen en las reuniones de estado..."></textarea>
+                </div>
+            </div>
+
+
+            <div class="form-step" id="step-4">
+                <h2 class="step-title">Resumen de tu Jornada</h2>
+                <p class="step-subtitle">Aquí está la evidencia de tu crecimiento de hoy. Revisa los datos antes de
+                    guardar.</p>
+
+                <div id="resumen-jornada" class="resumen-container">
+                </div>
+
+                <div class="input-group" style="margin-top: 20px;">
+                    <label for="nota-adicional">¿Alguna observación o nota adicional? (Opcional)</label>
+                    <input type="text" id="nota-adicional"
+                        placeholder="Ej: Mañana continuaré con las pruebas unitarias.">
+                </div>
+            </div>
+
+
+            <div class="step-buttons">
+                <button type="button" id="btn-prev" class="btn-secondary" disabled>Atrás</button>
+                <button type="button" id="btn-next" class="btn-primary">Siguiente</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="./assets/js/dailylog.js"></script>
+</body>
+
+</html>
