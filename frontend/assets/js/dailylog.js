@@ -34,7 +34,7 @@ btnNext.addEventListener('click', () => {
         if (currentStep === 4) btnNext.textContent = 'Guardar Bitácora';
     } else {
         // Al dar click en Guardar Bitácora, aquí recopilarías el objeto completo para la API
-        alert('¡Bitácora e información consolidada con éxito!');
+        alert('¡Información diario pasantia consolidada con éxito!');
     }
 });
 
